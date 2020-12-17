@@ -1,0 +1,19 @@
+{
+  "name": "qr-code-generator",
+  "version": "1.0.0",
+  "description": "A simple Qr-Code Generator",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify script.js -o bundle.js"
+  },
+  "author": "Ayo",
+  "license": "ISC",
+  "dependencies": {
+    "qrcode": "^1.4.4",
+    "watchify": "^3.11.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
