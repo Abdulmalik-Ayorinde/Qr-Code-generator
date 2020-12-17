@@ -89,7 +89,7 @@ button:active {
 }
 
 .control h4 {
-	text-decoration: underline;
+	/* text-decoration: underline; */
 	font-weight: bold;
 	font-size: 20px;
 	line-height: 35px;
@@ -102,7 +102,7 @@ button:active {
 
 @media screen and (max-width: 1000px) {
 	.container {
-		width: 60%;
+		width: 70%;
 	}
 	body {
 		height: 100%;
