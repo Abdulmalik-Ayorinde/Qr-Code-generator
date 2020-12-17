@@ -43,8 +43,8 @@ h3 {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
-	background: rgba(185, 219, 254, 0.9);
-	/* filter: drop-shadow(-4px); */
+	/* background: rgba(185, 219, 254, 0.9); */
+	background: rgba(0, 0, 0, 0.6);
 	border-radius: 30px;
 	width: 40%;
 	text-align: center;
@@ -100,9 +100,9 @@ button:active {
 	margin-bottom: 5px;
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 1000px) {
 	.container {
-		width: 80%;
+		width: 60%;
 	}
 	body {
 		height: 100%;
