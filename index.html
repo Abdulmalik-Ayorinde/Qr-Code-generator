@@ -24,25 +24,42 @@
 <div class="container">
     <div class="control">
         <h4>Full Name</h4>
-        <input type="text" class="text-field" placeholder="John Doe">
+        <input type="text" id="name" class="text-field" placeholder="John Doe">
     </div>    
     <div class="control">
         <h4>Email Address</h4>
-        <input type="text" class="text-field" placeholder="johndoe@doe.com">
+        <input type="text" id="email" class="text-field" placeholder="johndoe@doe.com">
     </div>    
     <div class="control">
         <h4>Twitter Handle</h4>
-        <input type="text" class="text-field" placeholder="@johndoe">
+        <input type="text" id="twitter" class="text-field" placeholder="@johndoe">
     </div>    
     <div class="control">
         <h4>GitHub Username</h4>
-        <input type="text" class="text-field" placeholder="John-Doe">
+        <input type="text" id="github" class="text-field" placeholder="John-Doe">
     </div>
     <div class="button-control">
-        <button>Generate</button>
-        <button>Cancel</button>
+        <button id="generate">Generate</button>
+        <button id="cancle">Cancel</button>
     </div>
 </div>
+</div>
+
+<div class="modal-container" id="modal-container">
+    <div class="main-modal" id="main-modal">
+        <div class="modal-content">
+
+            <p>Yay! Find your Qr-Code below       <!--  <button class="closebtn" id="closebtn">
+                <i class="fa fa-times"></i>
+            </button> --></p>
+
+            <div class="modal-form">
+                <img src="imgs/1qr.png" id="code-img" alt="qr-code">
+
+                <button id="close-modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 
     <script src="bundle.js"></script> 
