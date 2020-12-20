@@ -2,57 +2,57 @@ const QRCode = require('qrcode')
 
 
 const codeImg = document.getElementById('code-img')
-const  name = document.getElementById('name')
-const  email = document.getElementById('email')
-const  twitter = document.getElementById('twitter')
-const   github = document.getElementById('github')
+const modalContainer = document.getElementById('modal-container')
+let  name = document.getElementById('name').value
+let  email = document.getElementById('email').value
+let  twitter = document.getElementById('twitter').value
+let   github = document.getElementById('github').value
 
-const nameVal = 'name' + email.value
 
-const genBtn = document.getElementById('generate')
 const cancleBtn = document.getElementById('cancle')
 const closeBtn = document.getElementById('close-modal')
+
+const form = document.getElementById('my-form')
  
 const data = [
     { errorCorrectionLevel: 'H' }  
 ]
 
-console.log(nameVal)
+const handleSubmit = () => {
+    const data = new FormData(form)
+    let fullName = data.get("fullName")
+    let email = data.get("email")
+    let twitter = data.get("twitter")
+    let github= data.get("github")
+    const fullData= {
+        fullName, email, twitter, github
+    }
 
+    const segs = [
+        { data: `Fullname:${fullName}`},
+        { data: "           ", mode: 'Byte' },
+        { data: `Email:${email}`, mode: 'Byte' },
+        { data: "           ", mode: 'Byte' },
+        { data: `Twitter:${twitter}`, mode: 'Byte' },
+        { data: "           ", mode: 'Byte' },
+        { data: `Github:${github}`, mode: 'Byte' }
+      ]
 
-
-const val = [
-    `Full Name: ${nameVal}`,
-    '        ',
-    'Twitter: https://twitter.com/AbdulmalikAyor1',
-    '        ',
-    'Email: malik.ayo4life@gmail.com',
-    '        ',
-    'Github: https://github.com/Abdulmalik-Ayorinde'  
-]
-
-val.push(nameVal)
-
-const segs = [
-    
-    { data: `${val[0]}`},
-    { data: "           ", mode: 'Byte' },
-    { data: `Email: ${email.value}`, mode: 'Byte' },
-    { data: "           ", mode: 'Byte' },
-    { data: `Twitter: ${twitter.value}`, mode: 'Byte' },
-    { data: "           ", mode: 'Byte' },
-    { data: `Github: ${github.value}`, mode: 'Byte' }
-  ]
-
-  console.log(val)
-const generateCode = () => {
-    console.log(val)
-    console.log(email.value)
-    QRCode.toDataURL(val, data, (err, url) => {
+      
+    QRCode.toDataURL(segs, data, (err, url) => {
         if(err) console.error(err)
-        console.log(url)
         codeImg.setAttribute('src', `${url}`)
       })
 }
 
-genBtn.addEventListener('click', generateCode)
+form.addEventListener('submit',event => {
+    event.preventDefault()
+    modalContainer.classList.add('display-modal')
+    handleSubmit();
+} )
+
+closeBtn.addEventListener('click', () => {
+    modalContainer.classList.remove('display-modal')
+})
+
+// Work on form input validation 

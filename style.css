@@ -2,6 +2,10 @@
 /* box-sizing: border-box; */
 /* } */
 
+:root {
+	--modal-duration: 1.5s;
+}
+
 body {
 	margin: 0;
 	/* background-color: black; */
@@ -11,7 +15,7 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 }
 
 nav {
@@ -36,6 +40,10 @@ h3 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+button:active + input:active {
+	outline: o;
 }
 
 .container {
@@ -133,9 +141,7 @@ button:active {
 }
 
 .main-modal {
-	/* background-color: #fff; */
 	border-radius: 5px;
-	/* box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); */
 	position: absolute;
 	overflow: hidden;
 	top: 50%;
@@ -153,7 +159,6 @@ button:active {
 
 .modal-header h3 {
 	margin: 0;
-	/* border-bottom: 1px solid #333; */
 }
 
 .modal-content {
@@ -178,9 +183,7 @@ button:active {
 	font-style: normal;
 	font-weight: bold;
 	padding: 12px;
-	/* line-height: 47px; */
 	letter-spacing: 0.01em;
-	/* background-color: black; */
 	height: 35px;
 	background: #99a6fe;
 	border-radius: 20px;
@@ -202,4 +205,21 @@ button:active {
 .modal-form button {
 	padding: 10px;
 	margin: 10px;
+}
+
+.modal .display-modal {
+	display: block;
+}
+.modal-container.display-modal {
+	display: block;
+	animation-name: modalDisplay;
+	animation-duration: var(--modal-duration);
+}
+@keyframes modalDisplay {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }

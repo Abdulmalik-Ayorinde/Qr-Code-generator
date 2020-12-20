@@ -22,25 +22,27 @@
 
 <div class="main">
 <div class="container">
-    <div class="control">
-        <h4>Full Name</h4>
-        <input type="text" id="name" class="text-field" placeholder="John Doe">
-    </div>    
-    <div class="control">
-        <h4>Email Address</h4>
-        <input type="text" id="email" class="text-field" placeholder="johndoe@doe.com">
-    </div>    
-    <div class="control">
-        <h4>Twitter Handle</h4>
-        <input type="text" id="twitter" class="text-field" placeholder="@johndoe">
-    </div>    
-    <div class="control">
-        <h4>GitHub Username</h4>
-        <input type="text" id="github" class="text-field" placeholder="John-Doe">
-    </div>
-    <div class="button-control">
-        <button id="generate">Generate</button>
-        <button id="cancle">Cancel</button>
+    <form id="my-form">
+        <div class="control">
+            <h4>Full Name</h4>
+            <input type="text" id="name" name="fullName" class="text-field" placeholder="John Doe">
+        </div>    
+        <div class="control">
+            <h4>Email Address</h4>
+            <input type="text" id="email" name="email" class="text-field" placeholder="johndoe@doe.com">
+        </div>    
+        <div class="control">
+            <h4>Twitter Handle</h4>
+            <input type="text" id="twitter" name="twitter" class="text-field" placeholder="@johndoe">
+        </div>    
+        <div class="control">
+            <h4>GitHub Username</h4>
+            <input type="text" id="github" name="github" class="text-field" placeholder="John-Doe">
+        </div>
+        <div class="button-control">
+            <button type="submit" id="generate">Generate</button>
+            <button type="button" id="cancle">Cancel</button>
+    </form>
     </div>
 </div>
 </div>
@@ -49,9 +51,7 @@
     <div class="main-modal" id="main-modal">
         <div class="modal-content">
 
-            <p>Yay! Find your Qr-Code below       <!--  <button class="closebtn" id="closebtn">
-                <i class="fa fa-times"></i>
-            </button> --></p>
+            <p>Yay! Find your Qr-Code below</p>
 
             <div class="modal-form">
                 <img src="imgs/1qr.png" id="code-img" alt="qr-code">
@@ -63,10 +63,5 @@
 </div>
 
     <script src="bundle.js"></script> 
-    
-    <!-- <script src="script.js"></script>  -->
 </body>
 </html> 
-
-
-<!-- <canvas id="canvas"></canvas> -->
